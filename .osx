@@ -150,5 +150,8 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 # Commented out, as this is known to cause problems when saving files in Adobe Illustrator CS5 :(
 #echo "0x08000100:0" > ~/.CFUserTextEncoding
 
+# Fix GitX auto-reopening redundant windows on launch
+defaults write nl.frim.GitX NSQuitAlwaysKeepsWindows -bool NO
+
 # Kill affected applications
 for app in Safari Finder Dock Mail; do killall "$app"; done
